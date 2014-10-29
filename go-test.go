@@ -3,14 +3,13 @@ package main
 import (
 	"os/exec"
 	"fmt"
-	"bytes"
 	//"bufio"
-	"remote"
+	"github.com/lrajlich/go-test/src/remote"
+	//"remote"
 )
 
 func run() {
 	cmd := exec.Command("/Users/lrajlich/Projects/anviltop/anviltop-agent/cron_job.sh")
-	var out bytes.Buffer
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		panic (err)
@@ -34,7 +33,7 @@ func run() {
 	remote.ReadLoop(stdout)
 
 	cmd.Wait()
-	fmt.Printf("in all caps: %q\n", out.String())
+	fmt.Printf("DONE")
 }
 
 func main() {
