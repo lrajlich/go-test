@@ -4,7 +4,7 @@ import (
 	"os/exec"
 	"fmt"
 	//"bufio"
-	"github.com/lrajlich/go-test/src/remote"
+	"github.com/lrajlich/go-test/remote"
 	//"remote"
 )
 
